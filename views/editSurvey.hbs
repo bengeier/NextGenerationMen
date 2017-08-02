@@ -1,0 +1,142 @@
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Next Generation Men</h3>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h1>{{survey_name}}</h1>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <p>Welcome to the Edit Survey page. From this page you have the ability to do the following</p>
+            <ul>
+              <li>Edit the name of the survey</li>
+              <li>Edit any survey category</li>
+              <li>Edit any survey question</li>
+              <li>Add new survey categories</li>
+              <li>Add new survey questions</li>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h1>Survey Name</h1>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <form method="POST" class="form-inline" role="form">
+            
+              <div class="form-group">
+                <label class="sr-only" for="survey_name">Survey Name</label>
+                <input type="text" class="form-control " name="survey_name" placeholder="Survey name" style="width: 300px;"required="required" value="{{survey_name}}">
+              </div>
+            
+            
+              <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h1>Survey Categories & Questions</h1>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            
+            {{#each composite}}
+            <a href="/surveys/{{../survey_id}}/category/{{this.categroyId}}/edit"><h4>{{this.category}} <i class="fa fa-pencil"></i></h4></a>
+            <ul>
+              {{#each this.question}}
+              <li>
+                <a href="/surveys/{{../../survey_id}}/question/{{this.survey_question_id}}/edit">{{this.question}} <i class="fa fa-pencil"></i></a>
+                
+              </li>
+            {{/each}}
+            </ul>
+          {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h1>Add to Survey</h1>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <form method="POST">
+              <button formaction="/surveys/new/{{survey_id}}/category/0" type="submit" class="btn btn-primary">Add New Category</button>
+              <button formaction="/surveys/new/{{survey_id}}/question/0" type="submit" class="btn btn-primary">Add New Question</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<!-- /page content -->
+
+
+<!-- jQuery -->
+<script src="../../../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../../vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../../../vendors/nprogress/nprogress.js"></script>
+<!-- jQuery Smart Wizard -->
+<script src="../../../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="../../../build/js/custom.min.js"></script>
+
+<!-- Datatables -->
+<script src="../../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../../../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../../../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../../../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../../../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../../../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../../../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="../../../vendors/jszip/dist/jszip.min.js"></script>
+<script src="../../../vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../../../vendors/pdfmake/build/vfs_fonts.js"></script>
+
+<!-- Datatables -->
+<script>
+$(document).ready(function() {
+$('#datatable').DataTable({
+  "searching" : true
+});
+
+} );
+</script>
+<!-- /Datatables -->

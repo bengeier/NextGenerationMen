@@ -1,0 +1,86 @@
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Next Generation Men</h3>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Students</h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <table id="datatable" class="table table-striped table-bordered display" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>School</th>
+                  <th>Cohort</th>
+                  <th>Cell Phone</th>
+                  <th>Primary Guardian</th>
+                  <th>Cell Phone</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+              {{#each students}}
+                <tr>
+                  <td>{{this.student_first_name}}</td>
+                  <td>{{this.student_last_name}}</td>
+                  <td>{{this.school_name}}</td>
+                  <td>Class of {{this.cohort_year}}</td>
+                  <td>{{this.student_phone}}</td>
+                  <td>{{this.guardian_one_name}}</td>
+                  <td>{{this.guardian_one_phone}}</td>
+                  <td>
+                    <a href="/students/{{this.student_id}}/profile" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
+                    <a href="/students/{{this.student_id}}/edit" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                    <a href="/students/{{this.student_id}}/delete" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
+                  </td>
+                </tr>
+              {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+		</div>
+  </div>
+</div>
+<!-- /page content -->
+
+<!-- jQuery -->
+<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../vendors/nprogress/nprogress.js"></script>
+<!-- Datatables -->
+<script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+
+<script src="../vendors/jszip/dist/jszip.min.js"></script>
+<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="../build/js/custom.min.js"></script>
+
+
+<!-- Datatables -->
+<script>
+$(document).ready(function() {
+$('#datatable').DataTable({
+  "searching" : true
+});
+
+} );
+</script>
+<!-- /Datatables -->
+

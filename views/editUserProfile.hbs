@@ -1,0 +1,64 @@
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Edit Account Information</h3>
+      </div>
+    </div>
+    
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>{{user.name}}'s Account Information</h2>
+
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <p>You may need to logout and log back in before your name change is reflected on the webapp</p>
+            <form class="form-horizontal" action="editProfile" method="POST" role="form">
+              <!-- Name -->
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name<span class="required">*</span></label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" id="name" name="name" required="required" class="form-control" value="{{user.user_metadata.name}}">
+                </div>
+              </div>
+              <br/>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email<span class="required">*</span></label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="email" id="email" name="email" required="required" class="form-control" value="{{user.email}}">
+                </div>
+              </div>
+              <br/>
+
+              <div align="center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /page content -->
+
+
+<!-- jQuery -->
+<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../vendors/nprogress/nprogress.js"></script>
+<!-- jQuery Smart Wizard -->
+<script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="../build/js/custom.min.js"></script>
+
